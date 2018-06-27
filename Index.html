@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"> <!-- This line defines something called "character encoding"
+    This will allow the browser to display certain characters (such as non-Roman letters) correctly.
+    You should include this line in the head of all of your webpages. -->
+    <title>Memory Game</title>
+    <style>
+    </style>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+      <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+      <script type="text/JavaScript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+      <script type="text/JavaScript" src="jQuery.js"></script>
+      <script type="text/JavaScript" src="Timer.js"></script>
+
+  </head>
+
+<body>
+
+  <div class="container">
+      <header>
+          <h1>Matching Game</h1>
+
+          <div class='timer'>
+            <label id="minutes">00</label>
+            <label class='bigger'>:</label>
+            <label id="seconds">00</label>
+          </div>
+
+      </header>
+
+      <section class="score-panel">
+
+        <ul class="stars">
+          <li><i class="fa fa-star" id='star1'></i></li>
+          <li><i class="fa fa-star" id='star2'></i></li>
+          <li><i class="fa fa-star" id='star3'></i></li>
+        </ul>
+
+        <span class="moves" id="starsNumber">0</span> Moves
+
+          <div class="restart">
+            <i class="fa fa-repeat"></i>
+          </div>
+
+      </section>
+
+      <ul class="deck">
+          <li class="card">
+              <i class="fa fa-diamond" id="diamond1"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-paper-plane-o" id="plane1"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-anchor" id="anchor1"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-bolt" id="bolt1"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-cube" id="cube1"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-anchor" id=id="anchor2"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-leaf" id="leaf1"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-bicycle" id="bicycle1"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-diamond" id="diamond2"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-bomb" id="bomb1"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-leaf" id="leaf2"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-bomb" id="bomb2"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-bolt" id="bolt2"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-bicycle" id="bicycle2"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-paper-plane-o" id="plane2"></i>
+          </li>
+          <li class="card">
+              <i class="fa fa-cube" id="cube2"></i>
+          </li>
+      </ul>
+
+  </div>
+
+  </div>
+
+
+    <div class="container">
+      <div class="modal fade" id="completedModal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+           <div class="modal-header align-self-center">
+             <h4>Congratulations</h4>
+           </div>
+           <div class="modal-body text-center">
+             <p>The game has been completed</p>
+             <p>You did this in <span id="starsNumberModal">1</span> moves</p>
+             <p>You have earned a <span id="starRatingModal">Top</span> star rating</p>
+             <p>The timer was stopped at
+               <label id="minutesFinished">00</label>
+               <label class='bigger'>:</label>
+               <label id="secondsFinished">00</label><p/>
+
+             <p>Click restart play again!</p>
+           </div>
+           <div class="modal-footer align-self-center">
+             <button id="restartGameCompleted" type="button" class="btn btn-success" data-dismiss="modal">Restart</button>
+           </div>
+         </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="modal fade" id="beginModal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+           <div class="modal-header align-self-center">
+             <h4>Are you ready to begin?</h4>
+           </div>
+           <div class="modal-body text-center">
+             <p>Click a card to turnover</p>
+             <p>Match a pair of cards</p>
+             <p>To win you must match all 8 pairs</p>
+           </div>
+           <div class="modal-footer align-self-center">
+             <button id="beginGame" type="button" class="btn btn-success" data-dismiss="modal">Start Game</button>
+           </div>
+         </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>
