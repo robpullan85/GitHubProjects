@@ -1,6 +1,15 @@
 $(document).ready(function()
 {
 
+  // initial arrays set
+  let arrayClassName = [];
+  let arrayIdName = [];
+  let arraySelectorName = [];
+
+  // initial variables set
+  let matchCount = 0;
+  let movesCount = 0;
+
   // click event to restart the game at the players choice.
     $('.restart').click(cardShuffle);
 
@@ -76,14 +85,7 @@ $(document).ready(function()
           $('#star' + i).removeClass('fa fa-star-o').addClass('fa fa-star');
           }
 
-      // initial arrays set
-      var arrayClassName = [];
-      var arrayIdName = [];
-      var arraySelectorName = [];
 
-      // initial variables set
-      var matchCount = 0;
-      var movesCount = 0;
 
       // This function will keep track of the amount moves taking place
       // and edits the stars depending on number of stars.
@@ -92,12 +94,10 @@ $(document).ready(function()
 
           movesCount += 1;
           $('#starsNumber').html(movesCount)
-          if (movesCount > 16)
-            $('#star3').removeClass('fa-star').addClass('fa-star-o');
-          else if (movesCount > 12)
+          if (movesCount > 24)
             $('#star2').removeClass('fa-star').addClass('fa-star-o');
-          else if (movesCount > 8)
-            $('#star1').removeClass('fa-star').addClass('fa-star-o');
+          else if (movesCount > 12)
+            $('#star3').removeClass('fa-star').addClass('fa-star-o');
           else
             return;
         };
@@ -155,11 +155,9 @@ $(document).ready(function()
 
         // star rating
         $('#starsNumberModal').html(movesCount);
-        if (movesCount > 16)
-          $('#starRatingModal').html(0)
-        else if (movesCount > 12)
+        if (movesCount > 24)
           $('#starRatingModal').html(1)
-        else if (movesCount > 8)
+        else if (movesCount > 12)
           $('#starRatingModal').html(2)
         else
           $('#starRatingModal').html("Top")
